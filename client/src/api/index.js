@@ -5,7 +5,7 @@ console.log("현재 연결서버주소", process.env.REACT_APP_URL);
 // 액시오스 초기화 함수
 function createInstanceWithAuth(url, type) {
   const instance = axios.create({
-    baseURL: `${process.env.REACT_APP_URL}/${url}`,
+    baseURL: `http://${process.env.REACT_APP_URL}/${url}`,
   });
   return setInterceptors(instance, type);
 }

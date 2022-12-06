@@ -57,6 +57,8 @@ const UserNfts = () => {
   };
   const onSelect = (value) => {
     console.log("onSelect", value, nfts);
+    h
+    metaCid
   };
 
   return (
