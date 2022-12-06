@@ -45,11 +45,11 @@ const UserNfts = () => {
     const fetchData = async () => {
       const info = await myNft(address);
       setNfts(info.data.data.my_nft);
-      console.log("nfts", info);
+      console.log("nfts", nfts);
     };
 
     fetchData();
-  }, [address]);
+  }, [address, nfts]);
 
   const [options, setOptions] = useState([]);
   const handleSearch = (value) => {
