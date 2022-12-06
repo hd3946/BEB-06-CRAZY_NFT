@@ -45,21 +45,41 @@ const UserNfts = () => {
     const fetchData = async () => {
       const info = await myNft(address);
       setNfts(info.data.data.my_nft);
-      console.log("nfts", nfts);
+      console.log("nfts", info);
     };
 
     fetchData();
-  }, [address, nfts]);
+  }, [address]);
 
   const [options, setOptions] = useState([]);
   const handleSearch = (value) => {
     setOptions(value ? searchResult(value) : []);
   };
   const onSelect = (value) => {
-    console.log("onSelect", value, nfts);
-    h
-    metaCid
+    //console.log("onSelect", value);
   };
+  const data = [
+    {
+      title: "TWICE 팬클럽",
+      img: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      title: "BTS 팬클럽",
+      img: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      title: "블랙핑크 팬클럽",
+      img: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      title: "뉴진스 팬클럽",
+      img: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+    {
+      title: "르세라핌 팬클럽",
+      img: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    },
+  ];
 
   return (
     <>
@@ -81,16 +101,11 @@ const UserNfts = () => {
       <List
         size="large"
         grid={{ column: 5 }}
-        dataSource={nfts}
+        dataSource={data}
         renderItem={(item) => (
           <>
             <List.Item>
-              <Card
-                hoverable
-                cover={
-                  <img style={{ height: "200px" }} alt="nft" src={item.img} />
-                }
-              >
+              <Card hoverable cover={<img alt="nft" src={item.img} />}>
                 <Meta title={item.title} description="www.instagram.com" />
               </Card>
             </List.Item>
